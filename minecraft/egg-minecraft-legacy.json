@@ -1,0 +1,43 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-06-21T05:20:49-04:00",
+    "name": "Minecraft Legacy",
+    "author": "harry@tvhg.club",
+    "description": "A Minecraft Java egg.",
+    "features": [
+        "eula"
+    ],
+    "images": [
+        "quay.io\/harrydev\/images:minecraft-legacy"
+    ],
+    "file_denylist": [],
+    "startup": ".\/minecraft",
+    "config": {
+        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"enable-query\": \"true\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \")! For help, type \",\r\n    \"userInteraction\": [\r\n        \"Go to eula.txt for more info.\"\r\n    ]\r\n}",
+        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"logs\/latest.log\"\r\n}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y curl jq\r\ncd \/mnt\/server\r\n\r\nif [ ! -f server.properties ]; then\r\n    curl -sSL -o server.properties https:\/\/raw.githubusercontent.com\/parkervcp\/eggs\/master\/minecraft\/java\/server.properties\r\nfi\r\n\r\nif [ ! -f .pteroignore ]; then\r\n    curl -sSL -o .pteroignore https:\/\/raw.githubusercontent.com\/PteroEggs\/Minecraft\/main\/.pteroignore\r\nfi",
+            "container": "openjdk:8-jdk-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server Jar File",
+            "description": "The name of the server jarfile to run the server with.",
+            "env_variable": "SERVER_JARFILE",
+            "default_value": "server.jar",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|regex:\/^([\\w\\d._-]+)(\\.jar)$\/|max:80"
+        }
+    ]
+}
