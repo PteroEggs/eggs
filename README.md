@@ -1,2 +1,1 @@
-# Pterodactyl Eggs
-## Created by harrydev
+# Pterodactyl Eggs - Created by harrydev
