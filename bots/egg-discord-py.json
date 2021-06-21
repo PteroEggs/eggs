@@ -4,7 +4,7 @@
         "version": "PTDL_v1",
         "update_url": null
     },
-    "exported_at": "2021-06-21T05:29:19-04:00",
+    "exported_at": "2021-06-21T11:24:32-04:00",
     "name": "discord.py",
     "author": "harry@tvhg.club",
     "description": "An egg designed to run discord.py bots.",
@@ -13,7 +13,7 @@
         "quay.io\/harrydev\/images:python"
     ],
     "file_denylist": [],
-    "startup": "if [[ ! -z ${PY_PACKAGES} ]]; then pip install -U --target \/home\/container\/ ${PY_PACKAGES} &>\/home\/container\/install.log; fi; \/usr\/local\/bin\/python \/home\/container\/{{BOT_PY_FILE}}",
+    "startup": "if [[ ! -z {{PY_PACKAGES}} ]]; then pip install -U --target .local\/lib\/python3.8\/site-packages {{PY_PACKAGES}} &>\/home\/container\/install.log; fi; \/usr\/local\/bin\/python \/home\/container\/{{BOT_PY_FILE}}",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \" \"\r\n}",
