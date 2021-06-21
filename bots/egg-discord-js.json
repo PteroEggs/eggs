@@ -1,0 +1,44 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-06-21T05:28:20-04:00",
+    "name": "discord.js",
+    "author": "harry@tvhg.club",
+    "description": "An egg designed to run discord.js bots.",
+    "features": null,
+    "images": [
+        "quay.io\/harrydev\/images:nodejs10",
+        "quay.io\/harrydev\/images:nodejs12",
+        "quay.io\/harrydev\/images:nodejs14",
+        "quay.io\/harrydev\/images:nodejs15"
+    ],
+    "file_denylist": [],
+    "startup": "\/usr\/local\/bin\/npm install && \/usr\/local\/bin\/node \/home\/container\/${BOT_JS_FILE}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \" \"\r\n}",
+        "logs": "{}",
+        "stop": "^c^c^c^c^c^c^c^c^c"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y curl\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [ ! -f .pteroignore ]; then\r\n    curl -sSL -o .pteroignore https:\/\/raw.githubusercontent.com\/PteroEggs\/discord.js\/main\/.pteroignore\r\nfi\r\n\r\nexit 0",
+            "container": "node:12-buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup file",
+            "description": "The file that starts the bot.",
+            "env_variable": "BOT_JS_FILE",
+            "default_value": "index.js",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        }
+    ]
+}
