@@ -25,7 +25,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y curl\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [ ! -f .pteroignore ]; then\r\n    curl -sSL -o .pteroignore https:\/\/raw.githubusercontent.com\/PteroEggs\/discord.js\/main\/.pteroignore\r\nfi\r\n\r\nexit 0",
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y curl\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [ ! -f .pteroignore ]; then\r\n    curl -sSL -o .pteroignore https:\/\/raw.githubusercontent.com\/PteroEggs\/eggs\/main\/.pteroignore\r\nfi\r\n\r\nexit 0",
             "container": "node:12-buster-slim",
             "entrypoint": "bash"
         }
