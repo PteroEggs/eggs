@@ -1,4 +1,4 @@
-# Pterodactyl Eggs - Created by harrydev
+# Pterodactyl Eggs Library
 ### Minecraft
 - [Minecraft](https://raw.githubusercontent.com/PteroEggs/eggs/main/minecraft/egg-minecraft.json)
 - [Minecraft Legacy](https://raw.githubusercontent.com/PteroEggs/eggs/main/minecraft/egg-minecraft-legacy.json)
