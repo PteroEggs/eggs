@@ -10,3 +10,5 @@ logs/
 crash-reports/
 .console_history
 usercache.json
+plugins/dynmap/web/*
+plugins/CoreProtect/database.db
