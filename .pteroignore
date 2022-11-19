@@ -12,3 +12,4 @@ crash-reports/
 usercache.json
 plugins/dynmap/web/*
 plugins/CoreProtect/database.db
+bluemap/
